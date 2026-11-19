@@ -3,25 +3,14 @@
 **Loại tài liệu:** Implementation-oriented design specification  
 **Dự án:** Babel  
 **Engine context:** Godot 4.x / GDScript (project context: Godot 4.7)  
-**Phạm vi:** Tổng hợp các quyết định thiết kế từ Vòng 1 đến Vòng 6.3  
+**Phạm vi:** Chuẩn mỹ thuật, giao diện và trình bày thế giới
 **Đối tượng đọc:** Codex, lập trình viên, UI implementer và artist.
 
 ---
 
-## 0. Cách đọc và mức độ ưu tiên
+## 0. Vai trò tài liệu
 
-Tài liệu này ghi lại các quyết định đã được thảo luận. Đây không phải bản tóm tắt ý tưởng ngắn; đây là baseline để triển khai và tạo asset.
-
-Các nhãn được dùng:
-
-- **CONFIRMED** — người dùng đã chọn hoặc nói rõ. Xem là yêu cầu thiết kế, trừ khi có quyết định mới thay thế.
-- **DIRECTION** — định hướng nghệ thuật/triển khai đã thống nhất, nhưng còn tự do trong cách thực hiện.
-- **OPEN** — chưa quyết định. Không tự ý biến thành canon. Nếu code bắt buộc cần giá trị tạm, hãy để configurable và ghi rõ là placeholder.
-- **EXAMPLE** — ví dụ minh họa, không phải quy định cuối cùng.
-
-Nếu tài liệu cũ, asset placeholder hoặc prototype mâu thuẫn với quyết định mới trong tài liệu này, ưu tiên quyết định mới nhất tại đây. Demon/monster hiện tại trong prototype chỉ là placeholder, không được dùng làm chuẩn cho creature art cuối cùng.
-
-Đây là tài liệu định hướng thiết kế, không phải yêu cầu viết lại các hệ thống gameplay không liên quan. Trước khi sửa scene/script/resource, hãy kiểm tra cấu trúc repository hiện tại và giữ nguyên behavior đang hoạt động nếu không có lý do trực tiếp để thay đổi.
+Tài liệu này quy định hướng mỹ thuật, giao diện và cách trình bày thế giới của BABEL. Luật chơi và tiến trình phát triển được ghi trong [GAME_DESIGN.md](GAME_DESIGN.md) và [ROADMAP.md](ROADMAP.md). Khi triển khai nội dung chưa có đặc tả cụ thể, hãy giữ đúng các nguyên tắc bên dưới và không tự xem chi tiết mới là lore chính thức.
 
 ## 1. Bản sắc sản phẩm và trải nghiệm
 
@@ -147,7 +136,7 @@ Hướng dẫn:
 
 Icon nên trông như được khắc, chạm, dập hoặc ăn mòn trên vật liệu. Mặc định dùng monochrome tiết chế; không biến mọi icon thành minh họa nhiều màu. Biểu tượng giáo phái có thể xuất hiện trên kiến trúc, room art, quần áo NPC, item, relic và Dictionary.
 
-**OPEN:** Biểu tượng chính thức của Babel.
+**Chưa quy định:** Biểu tượng chính thức của Babel.
 
 ### 3.4 Frame và vật liệu UI
 
@@ -160,7 +149,7 @@ Icon nên trông như được khắc, chạm, dập hoặc ăn mòn trên vật
 
 Frame nên có cảm giác là vật thể tôn giáo được chế tác hoặc di vật, không phải viền fantasy phẳng thông thường. Aged bronze dùng cho cạnh, góc, chi tiết khắc, bản lề và highlight. Dark stone là bề mặt chính. Ornament tôn giáo phải tiết chế, không đặt chi tiết dày phía sau text.
 
-**OPEN:** Chính xác cult/tổ chức/di vật nào tạo ra Inventory frame. Không tạo ba UI frame khác nhau cho ba vùng.
+**Chưa quy định:** Chính xác cult/tổ chức/di vật nào tạo ra Inventory frame. Không tạo ba UI frame khác nhau cho ba vùng.
 
 ### 3.5 Mật độ UI và bố cục
 
@@ -189,7 +178,7 @@ Frame nên có cảm giác là vật thể tôn giáo được chế tác hoặc
 - Portrait là phương tiện phản ánh trạng thái và kể chuyện, không phải chỉ báo số liệu.
 - Các trạng thái phải phân biệt được ở kích thước HUD nhỏ.
 - Khi mở Inventory, nhân vật xuất hiện toàn thân. Tư thế và diện mạo thay đổi theo trang bị.
-- **OPEN:** Ngưỡng Mind cụ thể và số portrait state cuối cùng trong khoảng 3–5.
+- **Chưa quy định:** Ngưỡng Mind cụ thể và số portrait state cuối cùng trong khoảng 3–5.
 
 ### 4.3 Nút action chính
 
@@ -198,7 +187,7 @@ Frame nên có cảm giác là vật thể tôn giáo được chế tác hoặc
 - Không có text label.
 - Nút phụ thuộc ngữ cảnh: icon và màu nền đổi theo action hiện tại.
 - Ví dụ màu do người dùng đưa ra: Move = xanh lá; Attack = đỏ; Pray = tím.
-- Đây là ví dụ ngữ nghĩa màu; mã màu cuối cùng và bảng màu cho toàn bộ action còn **OPEN**.
+- Đây là ví dụ ngữ nghĩa màu; bảng màu chính xác cho toàn bộ action chưa được quy định.
 - Nhấn nút là thực thi action hiện tại ngay lập tức. Không thêm bước xác nhận phụ trừ khi một action cụ thể thật sự cần.
 - Lần đầu mỗi loại xúc xắc được sử dụng, tên loại xúc xắc được ghi vào Dictionary. Nút không hiển thị text label.
 
@@ -267,7 +256,7 @@ Quy tắc:
 - Room và trap entry mở sau khi vượt qua.
 - Không đưa full monster stats lên combat HUD; thông tin thuộc Dictionary.
 - Dictionary thể hiện quá trình khám phá và tích lũy tri thức, không phải database đầy đủ mở sẵn từ đầu.
-- **OPEN:** Trường dữ liệu mỗi entry, trạng thái hoàn thành, sort/filter.
+- **Chưa quy định:** Trường dữ liệu mỗi entry, trạng thái hoàn thành, sort/filter.
 
 ### 5.5 Thông tin enemy trong combat
 
@@ -295,7 +284,7 @@ Trình tự gợi ý:
 4. Mặt/icon kết quả phát sáng.
 5. Game xử lý action dựa trên kết quả.
 
-**OPEN:** Timing chi tiết, camera framing, physics implementation và sound design. Cảm giác nặng, tactile là yêu cầu đã chốt.
+**Chưa quy định:** Timing chi tiết, camera framing, physics implementation và sound design. Cảm giác nặng, tactile là yêu cầu đã chốt.
 
 ### 6.2 Movement feedback
 
@@ -320,7 +309,7 @@ Trình tự gợi ý:
 
 - Player death có một death sequence minh họa riêng.
 - Đây là sự kiện có ý nghĩa kể chuyện, không chỉ là game-over overlay thông thường.
-- **OPEN:** Trình tự, thời lượng và branching.
+- **Chưa quy định:** Trình tự, thời lượng và branching.
 
 ## 7. Nguyên tắc animation
 
@@ -437,9 +426,9 @@ Portrait người chơi phải hỗ trợ chủ đề này qua các Mind portrai
 - Có tượng và biểu tượng tôn giáo mang ngôn ngữ gợi dục/erotic.
 - Trang phục kết hợp nghi lễ, quyến rũ và táo bạo.
 - Tạo hình cơ thể có thể được sexualize như một phần bản sắc giáo phái hư cấu.
-- Game hướng tới đối tượng 18+; chủ đề erotic trưởng thành, máu và gore phù hợp với tone dark fantasy dự kiến.
-- Nhân vật phải được thể hiện rõ là người trưởng thành; không sexualize nhân vật vị thành niên.
-- Không phải room nào cũng cần explicit. Dùng tương phản giữa vẻ thiêng liêng đồ sộ, cám dỗ, nghi lễ bất an và body horror để tạo nhịp hình ảnh.
+- BABEL là game 18+. Hình ảnh tình dục trưởng thành, khỏa thân và máu me/gore được phép sử dụng theo đúng chủ đề dark fantasy; không cần né tránh chỉ vì mức độ trực diện.
+- Mọi nhân vật xuất hiện trong hình ảnh hoặc ngữ cảnh tình dục phải được thể hiện rõ là người trưởng thành.
+- Mức độ trực diện có thể thay đổi theo cảnh để phục vụ nhịp điệu và cảm xúc; đây là lựa chọn nghệ thuật, không phải giới hạn nội dung.
 
 ### 9.4 Vật liệu, motif và nội dung
 
@@ -461,15 +450,6 @@ Hướng triển khai:
 - Nghi thức trở thành quá trình biến đổi cơ thể.
 - Người chơi nhận ra motif temple của Floor 1 nhưng gặp một phiên bản bị biến đổi cực đoan, đáng sợ.
 - Không biến thành lớp gore phủ lên background. Sự biến đổi phải tác động đến kiến trúc, bố cục, biểu tượng và silhouette creature.
-
-### 9.6 OPEN — Region A
-
-- Biểu tượng cult, deity trung tâm và hierarchy.
-- Motif kiến trúc lặp lại và hệ symbol grammar.
-- Danh sách monster và vai trò NPC cụ thể.
-- Danh sách relic/item cụ thể.
-- Mind effect, giá trị và trigger chính xác.
-- Trạng thái/ending khi Mind đạt 0.
 
 ## 10. Region B — Hỏa Ngục Giáo
 
@@ -510,7 +490,6 @@ Xem đây là các giáo lý/thực hành cùng tồn tại, không phải các 
 - NPCs: fanatics.
 - Items: mixed.
 - Floor 2: eternal Hell.
-- Mind influence: unknown / chưa quyết định.
 
 Hướng triển khai:
 - Đại giáo đường Gothic địa ngục có quy mô đồ sộ.
@@ -545,16 +524,6 @@ Hướng triển khai:
 - Thời gian, giải thoát, tha thứ và khái niệm kết thúc dường như biến mất.
 - Trừng phạt không còn là sự kiện riêng lẻ; nó trở thành trạng thái vĩnh cửu.
 - Không diễn giải đơn giản thành nhiều lửa hơn/nhiệt độ cao hơn. Cốt lõi là sự không có hồi kết.
-
-### 10.6 OPEN — Region B
-
-- Mind effect chưa quyết định. Không tự gán fear, guilt, numbness, submission hoặc cơ chế Mind nào thành canon.
-- Hierarchy cụ thể của judge, executioner, fanatic và các vai trò khác.
-- Infernal cosmology và số tầng Địa Ngục.
-- Deity hoặc quyền lực thiêng trung tâm.
-- Danh sách monster, NPC, item.
-- Symbol/iconography riêng.
-- Chi tiết lửa, ánh sáng và environmental effect ngoài định hướng tổng thể.
 
 ## 11. Region C — Đà La Môn
 
@@ -599,7 +568,6 @@ Tránh dùng trực tiếp kinh văn thiêng, biểu tượng tôn giáo thật 
 - NPC: aristocrats.
 - Vật phẩm: treasures.
 - Floor 2: transformation.
-- Mind influence: unknown / chưa quyết định.
 
 ### 11.4 Visual direction
 
@@ -635,22 +603,12 @@ Hướng triển khai:
 - Kết quả là một thế giới xa hoa nhưng trật tự trở nên bất ổn và xâm lấn, không chỉ là cung điện đổ nát.
 - Giữ quy tắc Floor 2 chung: motif nguồn còn nhận ra được, layout remix, biến đổi cực độ.
 
-### 11.7 OPEN — Region C
-
-- Mind effect chưa quyết định.
-- Deity/quyền lực thiêng trung tâm và hierarchy.
-- Hệ chữ viết hư cấu và symbol grammar.
-- Lore chính xác liên kết chiếm hữu, hoàn mỹ và cosmology của giáo phái.
-- Danh sách monster, NPC và treasure.
-- Ranh giới giữa reality manipulation như environmental art và như gameplay mechanic.
-
 ## 12. Tương phản chủ đề giữa ba vùng
 
 | Chủ đề | Region A — Dục Đạo Giáo | Region B — Hỏa Ngục Giáo | Region C — Đà La Môn |
 |---|---|---|---|
 | Động lực | Ham muốn và khoái lạc | Bạo lực và trừng phạt | Tham lam và chiếm hữu tất cả |
 | Lời hứa | Khoái lạc cực độ / buông bỏ | Thiên đường qua đau khổ | Hoàn mỹ qua chiếm hữu và biến đổi |
-| Mind | Mục tiêu rõ: đưa Mind về 0 bằng khoái lạc | Chưa quyết định | Chưa quyết định |
 | Visual language | Đền tôn giáo nhục cảm suy đồi | Infernal cathedral đồ sộ | Cung điện arcane xa hoa |
 | Palette | Đen / đỏ thẫm / vàng | Đen / crimson / cam lửa | Vàng / tím / đen |
 | Floor 2 | Flesh | Eternal Hell | Transformation |
@@ -683,7 +641,7 @@ Hướng dẫn:
 - Rarity thể hiện bằng màu.
 - Palette direction: Gothic.
 
-**OPEN:** Tên 5 tier, mã màu chính xác và việc có dùng thêm frame detail ngoài màu hay không. Không tự tạo tên rarity hoặc hex color rồi coi là quyết định chính thức. Nếu sau này cần accessibility signal bổ sung, có thể kết hợp hình dạng/ornament, nhưng màu vẫn là phương thức chính đã chọn.
+**Chưa quy định:** Tên 5 tier, mã màu chính xác và việc có dùng thêm frame detail ngoài màu hay không. Không tự tạo tên rarity hoặc hex color rồi coi là quyết định chính thức. Nếu sau này cần accessibility signal bổ sung, có thể kết hợp hình dạng/ornament, nhưng màu vẫn là phương thức chính đã chọn.
 
 ## 14. Audio direction
 
@@ -691,7 +649,7 @@ Hướng dẫn:
 - Mỗi vùng có bản sắc audio/music riêng, tương tự khác biệt về kiến trúc, palette và creature.
 - Footsteps hỗ trợ chuỗi movement.
 - Môi trường gần như tĩnh; âm thanh có thể mang atmosphere tinh tế.
-- **OPEN:** Soundtrack, nhạc cụ, motif âm nhạc, combat sound và palette âm thanh cụ thể từng vùng.
+- **Chưa quy định:** Soundtrack, nhạc cụ, motif âm nhạc, combat sound và palette âm thanh cụ thể từng vùng.
 
 Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual.
 
@@ -737,216 +695,20 @@ Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual
 - Không tự đặt Mind effect cho Region B hoặc C.
 - Không tự tạo Babel emblem, cult symbol, rarity name hoặc stat value rồi trình bày như quyết định đã chốt.
 
-### 15.4 Gợi ý asset naming
+## 16. Nguyên tắc bảo toàn thiết kế
 
-Nếu repository chưa có naming convention, có thể tham khảo:
-- `region_a_floor_1_room_*.png`
-- `region_a_floor_2_room_*.png`
-- `region_a_monster_*.png`
-- `region_a_npc_*.png`
-- `region_a_relic_*.png`
-- Dùng prefix tương ứng cho `region_b` và `region_c`.
-- Shared UI asset dùng prefix chung như `ui_`, không dùng region prefix.
-- Portrait stage dùng identifier ổn định như `portrait_mind_stage_01` đến số stage cuối cùng được chọn.
+- Giữ chung một hệ thống UI cho cả ba vùng; vùng khác nhau qua thế giới và nội dung.
+- Không hiển thị Mind bằng số/thanh hoặc HP và chỉ số quái trên HUD chiến đấu.
+- Không dùng nội dung placeholder làm chuẩn mỹ thuật cuối cùng.
+- Không tự tạo biểu tượng Babel, biểu tượng giáo phái, tên/màu rarity hay cơ chế Mind chưa có trong thiết kế gameplay.
+- Các tham chiếu đến tác phẩm khác chỉ dùng để mô tả cảm giác và ngôn ngữ hình ảnh; không sao chép thiết kế, artwork hay tài sản.
+- BABEL là game 18+: hình ảnh tình dục trưởng thành và gore được phép; mọi nhân vật trong ngữ cảnh tình dục phải là người trưởng thành.
 
-Đây chỉ là gợi ý; hãy kiểm tra cấu trúc project trước khi áp dụng.
+## 17. Tóm tắt chuẩn hình ảnh
 
-## 16. Các quyết định còn mở
-
-Giữ nguyên trạng thái OPEN cho các mục sau đến khi người dùng quyết định.
-
-### Global
-- Babel emblem/symbol chính thức.
-- Những thứ người dùng muốn tránh về mặt hình ảnh (câu trả lời Vòng 5 để trống).
-- Reference/bổ sung freeform (để trống).
-- Nguồn gốc chính xác của Inventory frame và cult/artifact/tổ chức tạo ra nó.
-- Font family/file cụ thể và license.
-- Bộ icon và cult symbol cụ thể.
-- Tên và màu chính xác của 5 rarity tier.
-- Action-button color map đầy đủ ngoài ví dụ Move=green, Attack=red, Pray=purple.
-- Kích thước panel/card, responsive behavior và icon assignment cho control.
-- Dictionary entry schema và discovery UI.
-- Mind threshold và mapping vào 3–5 portrait stages.
-- Death sequence.
-- Dice physics/timing và audio implementation.
-- Audio identity/soundtrack từng vùng.
-
-### Region A
-- Deity, cult hierarchy, symbol và lore cụ thể.
-- Roster monster/NPC/relic.
-- Mind effect, value và trigger.
-- State/ending khi Mind = 0.
-
-### Region B
-- Mind effect chưa quyết định.
-- Deity, hierarchy và infernal cosmology.
-- Số tầng Địa Ngục nếu có.
-- Roster monster/NPC/item và symbol system.
-
-### Region C
-- Mind effect chưa quyết định.
-- Deity, hierarchy, fictional script và symbol system.
-- Lore liên kết possession, perfection và reality manipulation.
-- Roster monster/NPC/treasure.
-
-Không lấp các khoảng trống này bằng giả định trong code hoặc art brief. Nếu bắt buộc phải có lựa chọn tạm, cô lập nó thành configurable placeholder và ghi rõ provisional.
-
-## 17. Nguyên tắc thiết kế cuối cùng — quick reference
-
-1. **World first:** full-screen illustrated room là trải nghiệm chính.
-2. **One interface:** mọi vùng dùng chung HUD, panel, frame và interaction rules.
-3. **Distinct worlds:** bản sắc vùng đến từ background, monster, NPC và drop.
-4. **Mind is visual:** không hiển thị Mind bằng số/bar trên HUD; truyền đạt qua portrait.
-5. **No enemy HP HUD:** combat hiển thị hình monster; thông tin nằm trong Dictionary sau discovery.
-6. **Heavy interactions:** dice, panel, impact và transition phải có trọng lượng.
-7. **Restrained motion:** môi trường gần tĩnh; chỉ animate để tăng atmosphere/feedback.
-8. **Floor 2 is heresy:** giữ motif Floor 1, remix layout, biến đổi Blasphemous cực độ.
-9. **Three distinct doctrines:** khoái lạc (A), trừng phạt (B), chiếm hữu/hoàn mỹ (C).
-10. **Do not invent canon:** quyết định còn mở phải được giữ là mở.
-
----
-
-## Appendix A — Ghi lại câu trả lời theo từng vòng
-
-Phụ lục này lưu câu trả lời đã chọn để Codex có thể truy nguyên nguồn gốc quyết định.
-
-### Round 1 — Art direction / identity
-- Ấn tượng mong muốn: nguy hiểm, căng thẳng, sinh tồn, tối tăm, cô độc, bất an, bí ẩn, tò mò và khám phá.
-- Style: Dark Fantasy, Gothic, 2D Illustration.
-- Reference: Darkest Dungeon, Blasphemous, Fear & Hunger.
-- Detail: medium, đủ tạo thế giới.
-- Palette tổng: black-brown-bronze; từng vùng có palette chính riêng.
-- Lighting: cinematic balance of light/dark.
-- Materials: stone, metal, rusted iron.
-- Frames: ornate classical.
-- Typography: Gothic, sharp, mysterious.
-- Product feel: interactive illustrated artwork.
-
-### Round 2 — Layout / world
-- Fixed-scene, first-person room presentation.
-- Người chơi roll dice để di chuyển; background thay đổi dần.
-- Full-screen world artwork, HUD tiết chế ở dưới.
-- Portrait nhân vật bottom-left.
-- Main action button bottom-right, màu đổi theo action.
-- Các chức năng khác ở center-bottom.
-- Panel phụ chỉ mở khi được yêu cầu.
-- Monster là hình riêng tích hợp vào background.
-- Dictionary ghi lại room, monster, trap và nội dung khám phá.
-- Không hiển thị monster HP.
-- Room transition: fade to black rồi reveal.
-- Vùng khác nhau về palette, kiến trúc/môi trường, creature và audio/music.
-- Mỗi vùng gần như một thế giới riêng.
-
-### Round 3 — HUD / panels / discovery
-- Portrait tròn bottom-left; chỉ portrait và health tại đó.
-- Health dùng pip/segment rời.
-- Mind không hiển thị bằng số/bar; thay đổi portrait.
-- Gothic metal frame ở mức vừa phải.
-- Main action button tròn lớn kiểu Diablo, icon/màu nền đổi theo action, không text label.
-- Nhấn nút thực thi action hiện tại ngay.
-- Center-bottom: Inventory, Character/Status, Skill, Dictionary/Bestiary, Quest/Journal, Settings.
-- Inventory/Dictionary: background tối, hai nửa panel trượt từ hai phía và ghép lại.
-- Inventory: 9 bag slots trái, 5 equipment slots phải.
-- Card đứng, có illustration/effect; khi nằm trong slot thu về illustration-only.
-- Nhân vật full-body trong Inventory; pose đổi theo equipment.
-- Dictionary categories: monsters, room types, traps, characters/NPCs, items/cards, cults, regions/floors, secrets/lore notes.
-- Taxonomy kiểu bảo tàng, tham khảo The Witcher 3.
-- Combat chỉ hiển thị hình monster; thông tin khác trong Dictionary.
-- Monster entry mở sau khi sống sót qua battle.
-- Room/trap entry mở sau khi vượt qua.
-- Click ngoài panel để đóng.
-- Toàn bộ room hiển thị trước; người chơi quan sát và nhận diện nguy hiểm.
-
-### Round 4 — Animation / feedback
-- Room transition: 0.5–0.8 giây.
-- Fade to black rồi reveal scene; có movement feedback, step rhythm/bob và footsteps.
-- Dice 2D illustrated lăn trên bề mặt, tham khảo cách trình bày BG3.
-- Dice nặng, impact rõ.
-- Result face/icon phát sáng.
-- Movement: camera tiến về trước rồi chuyển scene.
-- Môi trường gần tĩnh, ít chuyển động.
-- Monster đã hiện diện trong scene; player phát hiện bằng quan sát.
-- Monster idle gần như bất động, đáng sợ.
-- Combat: dice player và monster xuất hiện đồng thời; impact/attack effect khi outcome được quyết định.
-- Player mất HP: một pip vỡ, screen shake nhẹ.
-- Monster nhận damage: flinch mạnh rồi trở lại bình thường.
-- Player death: death sequence minh họa riêng.
-- Mind portrait: 3–5 stage rõ; mắt/đồng tử, biểu cảm, da/vết thương/vết nứt và pose/body shape thay đổi.
-- Mở Inventory/Dictionary: hai nửa panel ghép có trọng lượng trong 0.5–0.7 giây.
-- Chọn card: phóng to và hiện đầy đủ thông tin.
-- Motion tổng thể: smooth, subtle, restrained.
-
-### Round 5 — Typography / iconography / UI materials
-- Heading font: Gothic.
-- Body font: readable serif.
-- Typography priority: balance.
-- Icon style: engraved.
-- Icon color: monochrome.
-- Cult-specific symbols: yes.
-- UI frame: ornate.
-- Metal: aged-bronze.
-- Panel: dark-stone.
-- Ornament inspiration: religious.
-- Card layout: art-dominant.
-- Card back: none.
-- Rarity tiers: 5.
-- Rarity presentation: color.
-- Rarity palette: Gothic.
-- Selected state: expand.
-- Disabled state: darkened.
-- Regional UI differences: shared-frame.
-- Babel emblem: unanswered.
-- Inventory frame origin: cult.
-- Things to avoid: unanswered.
-- Additional references: unanswered.
-
-### Round 6 — Region / floor rules
-- Region A: Dục Đạo Giáo.
-- Region B: Hỏa Ngục Giáo.
-- Region C: Đà La Môn.
-- Khác biệt vùng chỉ ở background images, monster design, NPC design và dropped items. UI dùng chung.
-- Floor 2 là phiên bản dị giáo hơn của Floor 1.
-- Hướng dị giáo: Blasphemous.
-- Quan hệ floor: remix layout nhưng giữ motif/kiến trúc có thể nhận ra.
-- Mức biến đổi: extreme.
-
-### Round 6.1 — Region A: Dục Đạo Giáo
-- Core: desire.
-- Architecture: temple.
-- Mood: decadent.
-- Palette: black, red, gold.
-- Monsters: human/humanoid.
-- NPCs: devotees.
-- Items: relics.
-- Floor 2: flesh.
-- Là tôn giáo lấy ham muốn và tình dục làm trung tâm. Kiến trúc tôn giáo suy đồi, xa hoa, hướng khoái lạc, có tượng và biểu tượng erotic. Trang phục gợi dục và nghi lễ; tạo hình cơ thể sexualized. Mục tiêu gameplay nền tảng của Region A là tác động Mind, đưa Mind về 0 và khiến người chơi chìm vào khoái lạc cực độ.
-
-### Round 6.2 — Region B: Hỏa Ngục Giáo
-- Quan niệm Địa Ngục: all (paradise, trial, justice, divinity).
-- Bạo lực: all (punishment, war, sacrifice, discipline).
-- Architecture: infernal cathedral.
-- Palette: black, crimson, fire.
-- Monsters: executioners.
-- NPCs: fanatics.
-- Items: mixed.
-- Floor 2: eternal Hell.
-- Mind influence: unknown / undecided.
-- Hỏa Ngục Giáo tôn thờ bạo lực và trừng phạt. Phiên bản méo mó của Dante's Inferno xem Địa Ngục là Thiên Đường và đích đến tối thượng.
-
-### Round 6.3 — Region C: Đà La Môn
-- Đối tượng chiếm hữu: everything.
-- Giáo lý: perfection.
-- Thẩm mỹ: decadent.
-- Kiến trúc: palace.
-- Palette: gold, purple, black.
-- Ma thuật: reality manipulation.
-- Quái vật: hybrid.
-- NPC: aristocrats.
-- Vật phẩm: treasures.
-- Floor 2: transformation.
-- Mind influence: unknown / undecided.
-- Đà La Môn chịu ảnh hưởng một phần giáo lý Dục Đạo Giáo. Trang phục xa hoa, lộng lẫy và cũng gợi dục. Ý tưởng kết hợp cảm hứng Emperor's Children và Tzeentch; kiến trúc có tham khảo nghệ thuật Islam cho một tôn giáo hư cấu, cần tránh đồng nhất tôn giáo ngoài đời với sự suy đồi.
-
----
-
-**End of document.**
+1. Room là tranh minh họa 2D toàn màn hình, góc nhìn thứ nhất, tĩnh và có bố cục rõ.
+2. UI tiết chế, dễ đọc, cùng một cấu trúc ở mọi vùng; panel lớn chỉ mở khi được yêu cầu.
+3. HUD dùng portrait và pip HP; Mind được kể qua biến đổi portrait.
+4. Dice, panel, chuyển cảnh và đòn đánh có trọng lượng; animation môi trường rất nhẹ.
+5. Floor 2 giữ motif nhận diện của Floor 1 nhưng biến đổi cực đoan theo giáo lý riêng của từng vùng.
+6. A tập trung vào ham muốn/khoái lạc; B vào bạo lực/trừng phạt; C vào tham lam/chiếm hữu và hoàn mỹ áp đặt.

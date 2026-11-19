@@ -27,7 +27,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 - [x] Tạo scene chính và script điều khiển prototype.
 - [x] Nạp asset nền cho sáu loại phòng.
 - [x] Nạp avatar người chơi và quái `monster-d1`.
-- [x] Thiết kế giao diện tối giản: nền chính, quái trung tâm, chân dung tròn, thanh HP, Mind và nút hành động tròn.
+- [x] Prototype có nền phòng, quái, portrait, HP/Mind và nút hành động.
 - [x] Màu nút hành động thay đổi theo loại phòng.
 - [x] Loại bỏ bảng nhật ký, túi thẻ và các thông tin thường trực khỏi màn hình chính.
 - [-] Kiểm tra trực quan trên nhiều độ phân giải cửa sổ.
@@ -67,7 +67,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 - [ ] Thêm sáu quái đặc trưng tầng 2.
 - [ ] Mỗi quái có ảnh hoặc biến thể hình ảnh riêng.
 - [ ] Tạo hiệu ứng trực quan ngắn khi thắng, thua, hòa, mất HP và quái chết.
-- [ ] Hiển thị rõ HP quái khi chiến đấu nhưng không làm nặng màn hình.
+- [ ] Làm rõ tiến triển trận đấu bằng phản hồi hình ảnh; không thêm bảng chỉ số/HP quái lên HUD chiến đấu.
 - [ ] Thêm ít nhất hai hiệu ứng quái: độc, cướp thẻ, giảm xúc xắc, giáp hoặc phản đòn.
 
 **Hoàn thành giai đoạn khi:** sáu quái tầng 1 có bản sắc cơ chế, người chơi có thể học cách đối phó thay vì chỉ mong may mắn.
@@ -95,7 +95,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 
 ## Giai đoạn 4 — Mind, bẫy và lựa chọn
 
-- [x] Mind hiển thị trên giao diện.
+- [x] Mind có phản hồi hình ảnh ở prototype; bản thiết kế cuối truyền đạt Mind qua portrait, không dùng số/thanh HUD.
 - [x] Mind thay đổi tông màu chân dung ở mức demo.
 - [?] Chốt thang Mind: giới hạn, giá trị khởi đầu và ý nghĩa cực dương/cực âm.
 - [ ] Tạo các mốc Mind có buff/debuff rõ ràng.
@@ -163,7 +163,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 
 ## Thứ tự ưu tiên hiện tại
 
-1. **Hoàn thiện sáu loại phòng ở khu A tầng 1.**
+1. **Hoàn thiện sáu loại phòng cho khu A, tầng 1.**
 2. **Làm dữ liệu quái, thẻ, bẫy và Event tách khỏi giao diện.**
 3. **Làm túi thẻ, trang bị và lựa chọn khi túi đầy.**
 4. **Thêm nhân vật đầu tiên cùng mục tiêu cá nhân.**
