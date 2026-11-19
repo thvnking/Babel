@@ -103,16 +103,14 @@ func _build_menu() -> void:
 
 
 func _build_sidebar_header() -> void:
-	var title := _label("BABEL", 50, COLOR_PARCHMENT)
+	var title := _label("B A B E L", 42, COLOR_PARCHMENT)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_constant_override("outline_size", 4)
 	title.add_theme_color_override("font_outline_color", Color(0.02, 0.015, 0.02, 0.9))
-	title.add_theme_constant_override("letter_spacing", 7)
 	sidebar_content.add_child(title)
 
 	var overline := _label("DESCENT INTO THE ABYSS", 10, COLOR_BRONZE_BRIGHT)
 	overline.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	overline.add_theme_constant_override("letter_spacing", 2)
 	sidebar_content.add_child(overline)
 
 	var subtitle := _label("Càng lên cao, càng chìm sâu.", 12, COLOR_MUTED)
@@ -125,7 +123,6 @@ func _build_sidebar_header() -> void:
 	sidebar_content.add_child(top_space)
 
 	var section_title := _label("HÀNH TRÌNH", 13, COLOR_BRONZE_BRIGHT)
-	section_title.add_theme_constant_override("letter_spacing", 2)
 	sidebar_content.add_child(section_title)
 
 	var divider := ColorRect.new()
@@ -193,7 +190,6 @@ func _show_credits_page() -> void:
 
 func _add_page_heading(text: String) -> void:
 	var heading := _label(text, 13, COLOR_BRONZE_BRIGHT)
-	heading.add_theme_constant_override("letter_spacing", 2)
 	page_content.add_child(heading)
 	var divider := ColorRect.new()
 	divider.color = Color(COLOR_BRONZE, 0.62)
