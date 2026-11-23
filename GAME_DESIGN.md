@@ -62,7 +62,7 @@ Các màu là mã nhận diện hiện dùng; ngôn ngữ hình ảnh chi tiết
 
 1. Trong phòng Monster, chiến đấu diễn ra theo các lượt xúc xắc.
 2. Người chơi tung xúc xắc của vũ khí đang trang bị.
-3. Quái tung `D6 + Attack`.
+3. Quái tung xúc xắc theo dữ liệu riêng cộng `Attack`; Chuột Hang hiện dùng D2.
 4. So sánh tổng: người chơi cao hơn thì quái mất 1 HP; quái cao hơn thì người chơi mất 1 HP; hòa thì không ai mất HP.
 5. Lặp lại đến khi quái hoặc người chơi hết HP. Người chơi hết HP thì lượt chơi kết thúc.
 
@@ -76,7 +76,7 @@ Trong chiến đấu, UI không hiển thị bảng chỉ số hay HP quái. Qu�
 
 Vũ khí, trang bị và vật phẩm đều tồn tại dưới dạng thẻ.
 
-- Túi có 9 ô; nhân vật có 5 ô trang bị.
+- Túi có 4 ô; có thêm một ô vũ khí riêng và trang bị nhân vật hiển thị cạnh hình toàn thân.
 - Thẻ đến từ quái, Event và các nguồn nội dung khác.
 - Thẻ có thể bị dùng, bỏ, thay thế, cướp, phá hủy hoặc nguyền rủa theo hiệu ứng.
 - Khi túi đầy, người chơi tự chọn thẻ giữ và thẻ bỏ; không tự động xóa thẻ.
@@ -108,7 +108,9 @@ Thưởng khi hạ quái:
 
 ## 8. Mind
 
-Mind biểu đạt cách Babel biến đổi nhận thức nhân vật và kết nối cơ chế với cốt truyện. Pray ảnh hưởng đến Mind; Mind có thể tác động đến trạng thái nhân vật, buff/debuff và điều kiện ending. Trên HUD, Mind chỉ được truyền tải qua các trạng thái portrait, không bằng con số hay thanh đo.
+Mind biểu đạt cách Babel biến đổi nhận thức nhân vật và kết nối cơ chế với cốt truyện. Trong prototype hiện tại, Mind bắt đầu ở 0, giới hạn từ −5 đến +5 và được biểu diễn trực quan bằng thang 11 nấc quanh mốc 0, kèm giá trị hiện tại. HP được biểu diễn bằng thanh có số hiện tại/tối đa; mọi thay đổi bị giới hạn trong khoảng hợp lệ. Đây là quyết định UI/gameplay mới thay cho quy tắc HUD cũ trong visual bible.
+
+Phòng Pray yêu cầu người chơi chủ động tung D6. Kết quả lần lượt là: 1: −1 HP, −1 Mind; 2: −1 Mind; 3: không đổi; 4: +1 Mind; 5: +1 HP; 6: +1 HP, +1 Mind. HP luôn nằm trong [0, HP tối đa], Mind trong [−5, +5]; HP về 0 kết thúc lượt chơi.
 
 Region A chủ động tác động Mind; mục tiêu chủ đề của vùng là đưa Mind về 0 và cuốn người chơi vào khoái lạc cực độ. Cơ chế cụ thể để đạt điều đó phải được định nghĩa cùng nội dung gameplay. Mind của Region B và C không có hiệu ứng đặc thù được quy định ở tài liệu này.
 
@@ -133,7 +135,9 @@ Tách luật hệ thống khỏi dữ liệu cốt truyện và cân bằng. Tro
 
 ## 11. Phạm vi prototype
 
-Prototype hiện tại minh họa vòng chơi cơ bản với nền phòng, avatar, HP/Mind, nút hành động, D6 chọn một trong sáu phòng, chiến đấu bằng dao găm D4 so với D6 + Attack, thắng gây 1 sát thương, hòa không gây sát thương, Pray đổi Mind và Bonfire hồi 1 HP. Đây là hành vi demo, không thay cho luật hoàn chỉnh ở trên.
+Prototype hiện tại minh họa vòng chơi cơ bản với nền phòng, avatar, HP/Mind, nút hành động, D6 chọn một trong sáu phòng, chiến đấu bằng dao găm D4 so với xúc xắc riêng của quái cộng Attack (Chuột Hang: D2, 2 HP), thắng gây 1 sát thương, hòa không gây sát thương, Pray dùng D6 để đổi HP/Mind và Bonfire hồi 1 HP. Đây là hành vi demo, không thay cho luật hoàn chỉnh ở trên.
+
+Menu prototype có trang Settings (âm lượng chung, toàn màn hình, khôi phục mặc định), Credits, popup xác nhận/thông báo và một ô lưu cục bộ. Trong game, ESC hoặc nút Tạm dừng mở menu lưu thủ công, cài đặt, tiếp tục, về menu và thoát; Ctrl+S lưu nhanh. Tiếp tục/Tải hành trình khôi phục các trạng thái chơi hiện có trong prototype.
 
 Kế hoạch triển khai nằm trong [ROADMAP.md](ROADMAP.md).
 

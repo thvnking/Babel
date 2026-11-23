@@ -31,7 +31,8 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 - [x] Màu nút hành động thay đổi theo loại phòng.
 - [x] Loại bỏ bảng nhật ký, túi thẻ và các thông tin thường trực khỏi màn hình chính.
 - [-] Kiểm tra trực quan trên nhiều độ phân giải cửa sổ.
-- [ ] Tạo cài đặt âm lượng, toàn màn hình và thoát game.
+- [x] Tạo cài đặt âm lượng, toàn màn hình và thoát game.
+- [x] Hoàn thiện Credits, popup xác nhận/thông báo và khôi phục cài đặt mặc định.
 
 **Hoàn thành giai đoạn khi:** giao diện hiển thị ổn định ở độ phân giải mục tiêu và không che mất hành động quan trọng.
 
@@ -44,7 +45,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 - [x] Thay nền theo phòng được tung.
 - [x] Monster mở trạng thái chiến đấu.
 - [x] Bonfire bản thử hồi 1 HP.
-- [-] Pray thay đổi Mind ở mức demo.
+- [x] Pray tung D6 với sáu kết quả HP/Mind; giới hạn chỉ số theo giá trị tối đa.
 - [ ] Trap có hiệu ứng thật theo dữ liệu.
 - [ ] Teleport cho người chơi chọn điểm đến hợp lệ.
 - [ ] Event có ít nhất ba tình huống thật và hậu quả.
@@ -58,6 +59,7 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 ## Giai đoạn 2 — Chiến đấu và quái vật
 
 - [x] Người chơi bắt đầu bằng dao găm D4.
+- [x] Chuột Hang (quái đầu) có 2 HP và tung D2.
 - [x] Quái tung D6 cộng Attack.
 - [x] Thắng lượt gây 1 HP; thua lượt mất 1 HP; hòa không ai mất HP.
 - [x] Người chơi chết khi HP về 0; có thể chơi lại.
@@ -76,11 +78,11 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 
 ## Giai đoạn 3 — Thẻ bài, túi và trang bị
 
-- [x] Đã chốt 9 ô túi thẻ và 5 ô trang bị trong thiết kế.
+- [x] Đổi thiết kế theo yêu cầu mới: 4 ô túi, 1 ô vũ khí riêng và panel nhân vật/trang bị.
 - [x] Đã chốt phần thưởng từ quái theo tầng trong thiết kế.
 - [ ] Tạo dữ liệu Card dùng chung cho vũ khí, trang bị, vật phẩm và kỹ năng.
-- [ ] Làm giao diện mở túi thẻ theo yêu cầu của người chơi.
-- [ ] Làm 9 ô túi thẻ và 5 ô trang bị.
+- [x] Làm giao diện Inventory mở/đóng bằng nút hoặc phím I; có panel hai bên.
+- [-] Làm 4 ô túi, 1 ô vũ khí, hình toàn thân nhân vật và 3 ô trang bị; thao tác dùng/thay thẻ chưa có.
 - [ ] Khi túi đầy, hiện màn hình chọn thẻ giữ lại hoặc bỏ đi.
 - [ ] Làm bảng thưởng sau khi hạ quái.
 - [ ] Thưởng tầng 1: D6, 6 là vũ khí; 1–5 là vật phẩm.
@@ -95,14 +97,14 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 
 ## Giai đoạn 4 — Mind, bẫy và lựa chọn
 
-- [x] Mind có phản hồi hình ảnh ở prototype; bản thiết kế cuối truyền đạt Mind qua portrait, không dùng số/thanh HUD.
+- [x] Mind có phản hồi hình ảnh ở prototype; hiện hiển thị thang −5..+5 cùng vị trí hiện tại theo yêu cầu mới.
 - [x] Mind thay đổi tông màu chân dung ở mức demo.
-- [?] Chốt thang Mind: giới hạn, giá trị khởi đầu và ý nghĩa cực dương/cực âm.
+- [x] Chốt tạm thang prototype: bắt đầu 0, giới hạn −5..+5; ý nghĩa buff/debuff cốt truyện còn mở.
 - [ ] Tạo các mốc Mind có buff/debuff rõ ràng.
 - [ ] Thêm chân dung hoặc hiệu ứng chân dung cho từng trạng thái Mind.
 - [ ] Tạo bộ bẫy khu vực A, tối thiểu 4 bẫy.
 - [ ] Mỗi bẫy có cách nhận biết hoặc cách giảm rủi ro.
-- [ ] Tạo bảng Pray D12 và hiệu ứng Mind tương ứng.
+- [x] Tạo bảng Pray D6 với sáu kết quả HP/Mind, giới hạn quá mức và kết thúc khi HP về 0.
 - [ ] Tạo Event có lựa chọn, điều kiện, hậu quả và cờ cốt truyện.
 - [ ] Lưu các cờ quan trọng để dùng cho ending.
 
@@ -154,7 +156,8 @@ Phiên bản đầu không cần đủ sáu tầng, toàn bộ cốt truyện ha
 - [ ] Thêm nhạc nền hoặc ambient cho từng khu vực.
 - [ ] Thêm chuyển cảnh, hiệu ứng hạt và rung nhẹ khi phù hợp.
 - [ ] Kiểm tra đầy túi, chết giữa Event, đổi tầng, thoát game và chơi lại.
-- [ ] Kiểm tra lưu/tải lượt chơi.
+- [ ] Chơi thử và kiểm tra lưu/tải, gồm tải lại giữa trận và dữ liệu lưu không hợp lệ.
+- [x] Thêm lưu/tải thủ công và Tiếp tục từ menu; xác nhận trước khi bắt đầu mới hoặc rời lượt chưa lưu.
 - [ ] Tạo bản build thử nghiệm cho Windows.
 
 **Hoàn thành giai đoạn khi:** không có lỗi chặn lượt chơi; một người chưa biết dự án có thể chơi, hiểu vòng chính và gửi phản hồi.

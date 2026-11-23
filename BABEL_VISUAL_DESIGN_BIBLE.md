@@ -167,8 +167,7 @@ Frame nên có cảm giác là vật thể tôn giáo được chế tác hoặc
 - Khu vực này chỉ có portrait nhân vật và hiển thị HP.
 - Portrait tròn, gợi nhớ Diablo.
 - HP hiển thị bằng các pip/segment rời, không phải thanh liên tục.
-- Mind KHÔNG hiển thị dạng số, meter hay bar trên HUD.
-- Mind được truyền đạt thông qua thay đổi portrait.
+- Theo quyết định UI mới, HUD hiển thị Mind bằng thang trực quan −5..+5 có số hiện tại; portrait tiếp tục đổi sắc thái để truyền đạt trạng thái.
 
 ### 4.2 Mind portrait
 
@@ -218,8 +217,8 @@ Giữ chúng gọn, không cạnh tranh với room artwork.
 ### 5.2 Cấu trúc Inventory
 
 **CONFIRMED:**
-- Nửa trái: 9 ô túi đồ.
-- Nửa phải: 5 ô trang bị.
+- Bên trái: 4 ô túi đồ và 1 ô vũ khí riêng.
+- Bên phải: nhân vật toàn thân và các ô trang bị.
 - Card/item là hình chữ nhật đứng.
 - Khi ở trạng thái mở rộng/chưa chọn, card có minh họa và effect.
 - Khi đặt vào slot, card thu gọn chỉ còn minh họa.
@@ -660,11 +659,11 @@ Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual
 1. Giữ full-screen illustrated room là lớp hình ảnh chính.
 2. Một global HUD và panel system dùng chung cả ba vùng.
 3. Bottom-left round character portrait với health pip rời.
-4. Không hiển thị Mind bằng số/bar trên HUD; dùng portrait stage.
+4. Mind có thang trực quan giới hạn −5..+5; portrait stage tiếp tục bổ trợ trạng thái.
 5. Nút action tròn lớn bottom-right, đổi icon/màu theo action và thực thi ngay.
 6. Các chức năng phụ ở center-bottom và hidden panels.
 7. Panel hai nửa ghép lại, background dim.
-8. Giữ layout 9 inventory slots + 5 equipment slots.
+8. Dùng 4 ô túi đồ, 1 ô vũ khí riêng và panel nhân vật/trang bị hai bên.
 9. Card có compact/expanded/selected/disabled states.
 10. Không có enemy stats trong combat HUD; dùng enemy image khi combat, Dictionary cho discovery.
 11. Dice sequence có roll nặng, impact và result glow.
@@ -687,7 +686,7 @@ Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual
 ### 15.3 Những điều Codex không được tự ý làm
 
 - Không thêm monster HP bar hoặc detailed monster stats vào combat HUD.
-- Không thêm Mind number/bar vào HUD.
+- Mind HUD hiển thị giá trị hiện tại trên thang −5..+5 theo quyết định UI mới.
 - Không tạo global UI layout khác nhau theo vùng.
 - Không coi Floor 2 là Floor 1 chỉ phủ màu tối.
 - Không dùng demon art placeholder làm chuẩn creature design cuối.
@@ -698,7 +697,7 @@ Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual
 ## 16. Nguyên tắc bảo toàn thiết kế
 
 - Giữ chung một hệ thống UI cho cả ba vùng; vùng khác nhau qua thế giới và nội dung.
-- Không hiển thị Mind bằng số/thanh hoặc HP và chỉ số quái trên HUD chiến đấu.
+- Không hiển thị HP/chỉ số quái trên HUD chiến đấu; Mind có thang giới hạn trực quan theo quyết định mới.
 - Không dùng nội dung placeholder làm chuẩn mỹ thuật cuối cùng.
 - Không tự tạo biểu tượng Babel, biểu tượng giáo phái, tên/màu rarity hay cơ chế Mind chưa có trong thiết kế gameplay.
 - Các tham chiếu đến tác phẩm khác chỉ dùng để mô tả cảm giác và ngôn ngữ hình ảnh; không sao chép thiết kế, artwork hay tài sản.
@@ -708,7 +707,7 @@ Không tự suy diễn audio spec cuối cùng chỉ từ quyết định visual
 
 1. Room là tranh minh họa 2D toàn màn hình, góc nhìn thứ nhất, tĩnh và có bố cục rõ.
 2. UI tiết chế, dễ đọc, cùng một cấu trúc ở mọi vùng; panel lớn chỉ mở khi được yêu cầu.
-3. HUD dùng portrait và pip HP; Mind được kể qua biến đổi portrait.
+3. HUD dùng thanh HP có số hiện tại/tối đa, thang Mind −5..+5 và biến đổi portrait.
 4. Dice, panel, chuyển cảnh và đòn đánh có trọng lượng; animation môi trường rất nhẹ.
 5. Floor 2 giữ motif nhận diện của Floor 1 nhưng biến đổi cực đoan theo giáo lý riêng của từng vùng.
 6. A tập trung vào ham muốn/khoái lạc; B vào bạo lực/trừng phạt; C vào tham lam/chiếm hữu và hoàn mỹ áp đặt.

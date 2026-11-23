@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df6stfvdmsu56"
-path="res://.godot/imported/monster.jpg-f52b090bf4b041e4e49ccf1aabd61f21.ctex"
+uid="uid://eukq2jcm0dxr"
+path="res://.godot/imported/room_teleport.jpg-d7bf842c236b6b4761e6e6359f5621a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/monster.jpg"
-dest_files=["res://.godot/imported/monster.jpg-f52b090bf4b041e4e49ccf1aabd61f21.ctex"]
+source_file="res://image/rooms/room_teleport.jpg"
+dest_files=["res://.godot/imported/room_teleport.jpg-d7bf842c236b6b4761e6e6359f5621a5.ctex"]
 
 [params]
 

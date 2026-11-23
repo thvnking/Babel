@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhuaiouryd5pf"
-path="res://.godot/imported/pray.jpg-a5ee63d951d0bb94544a33b03664054c.ctex"
+path="res://.godot/imported/room_pray.jpg-a51f044a6e3e9d5088430728ac9b67d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/pray.jpg"
-dest_files=["res://.godot/imported/pray.jpg-a5ee63d951d0bb94544a33b03664054c.ctex"]
+source_file="res://image/rooms/room_pray.jpg"
+dest_files=["res://.godot/imported/room_pray.jpg-a51f044a6e3e9d5088430728ac9b67d3.ctex"]
 
 [params]
 

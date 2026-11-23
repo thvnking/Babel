@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mude4v78ob2j"
-path="res://.godot/imported/trap.jpg-9f147860ad67a16477b539159b9d2eb8.ctex"
+uid="uid://bco2ynbkdm2ew"
+path="res://.godot/imported/menu_button_frame.png-1e8ed0a2bc6339c2b3c6b8b569a53a8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/trap.jpg"
-dest_files=["res://.godot/imported/trap.jpg-9f147860ad67a16477b539159b9d2eb8.ctex"]
+source_file="res://image/ui/menu/menu_button_frame.png"
+dest_files=["res://.godot/imported/menu_button_frame.png-1e8ed0a2bc6339c2b3c6b8b569a53a8e.ctex"]
 
 [params]
 
